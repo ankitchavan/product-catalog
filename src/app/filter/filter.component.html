@@ -1,7 +1,10 @@
 <div class="product-filter p-2 pt-2">
     <div class="filter-header">
-        <h6 class="m-0 pe-2 fw-bold">Filters</h6>
-        <button type="button" class="btn btn-link slider-label m-0 p-0" (click)="onClearClick()">Clear</button>
+        <div style="display: flex; align-items: center;">
+            <h6 class="m-0 pe-2 fw-bold">Filters</h6>
+            <button type="button" class="btn btn-link slider-label m-0 p-0" (click)="onClearClick()">Clear</button>
+        </div>
+        <button class="sidebar-toggle float-end" id="sidebar-toggle" (click)="toggleSidebar()">☰</button>
     </div>
     
     <br>

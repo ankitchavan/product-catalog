@@ -1,4 +1,23 @@
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
 .product-filter{
+    @media (max-width: $breakpoint-md) {
+        height: 0px;
+        width: 0px;
+        padding: 0px !important;
+        overflow: hidden;
+
+        &.collapsed {
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    
+
     mv-slider{
         ::ng-deep {
             .slider-horizontal{
@@ -20,6 +39,7 @@
     .filter-header{
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
     .slider-label{
@@ -34,4 +54,26 @@
         }
     }
 }
+
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    z-index: 10000;
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    padding: 4px 10px;
+    font-size: 1.3rem;
+    cursor: pointer;
+  
+    &:focus {
+      outline: none;
+    }
+  
+    @media (max-width: $breakpoint-md) {
+      display: block;
+    }
+  }
 

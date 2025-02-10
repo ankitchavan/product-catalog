@@ -4,10 +4,10 @@
     <h5 class="pt-2 pb-2">Product Catalog</h5>
   </div>
   <div class="row h-100">
-    <div class="col-2 p-2 border-end">
-      <app-filter [maxPrice]="maxPrice" (onClear)="onClearFilter()" (filterChange)="onfilterChange($event)"></app-filter>
+    <div class="col-lg-2 col-md-12 p-2 border-end">
+      <app-filter [maxPrice]="maxPrice" (onClear)="onClearFilter(); productsContent.scrollTop = 0" (filterChange)="onfilterChange($event); productsContent.scrollTop = 0"></app-filter>
     </div>
-    <div class="products-content col-10 p-2 m-0 row g-2" 
+    <div #productsContent class="products-content col-lg-10 col-md-12 p-2 m-0 row g-2" 
       infiniteScroll
       [infiniteScrollDistance]="2"
       [infiniteScrollThrottle]="50"

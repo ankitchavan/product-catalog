@@ -45,6 +45,14 @@ export class FilterComponent implements OnInit, AfterViewInit {
     setTimeout(()=>{
       this.price = this.maxPrice;
     }, 500);
+
+    // console.log(document.getElementById('sidebar-toggle'));
+    // document.getElementById('sidebar-toggle')?.addEventListener('click', function() {
+    //   console.log("cliked")
+    //   const sidebar = document.getElementById('product-filter');
+    //   console.log("sidebar", sidebar)
+    //   sidebar?.classList.toggle('collapsed');
+    // });
   }
 
   emitFilterChange() {
@@ -55,7 +63,9 @@ export class FilterComponent implements OnInit, AfterViewInit {
     })
   }
 
-  priceChange() {
+  toggleSidebar() {
+    const sidebar = document.getElementsByClassName('product-filter')[0];
+    sidebar?.classList.toggle('collapsed');
   }
 
   ratingChange() {
