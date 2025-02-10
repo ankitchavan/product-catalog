@@ -1,0 +1,37 @@
+.product-filter{
+    mv-slider{
+        ::ng-deep {
+            .slider-horizontal{
+                width: 90%;
+            }
+            .slider-track{
+                height: 6px;
+                margin-top: -3px;
+            }
+            .slider-selection{
+                background-image: linear-gradient(to bottom, #2e2f30 0, #8a8888 100%);
+            }
+            .slider-handle{
+                background-image: linear-gradient(to bottom, #595c5f 0, #2e2f30 100%);
+            }
+        }
+    }
+
+    .filter-header{
+        display: flex;
+        align-items: center;
+    }
+
+    .slider-label{
+        font-size: 14px;
+    }
+
+    .rating-conatiner{
+        display: flex;
+        align-items: center;
+        .slider-label{
+            margin-top: 3px;
+        }
+    }
+}
+

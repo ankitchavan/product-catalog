@@ -1,0 +1,28 @@
+<div class="product-filter p-2 pt-2">
+    <div class="filter-header">
+        <h6 class="m-0 pe-2 fw-bold">Filters</h6>
+        <button type="button" class="btn btn-link slider-label m-0 p-0" (click)="onClearClick()">Clear</button>
+    </div>
+    
+    <br>
+    <p class="slider-label m-0">Product Name</p>
+    <input type="text" class="form-control form-control-sm" id="nameFormControlInput" placeholder="Product Name" [(ngModel)]="productName" (ngModelChange)="productNameChanged.next(productName)">
+
+    <br>
+
+    <p class="slider-label m-0">Price: {{price}}</p>
+    <div class="pt-0">
+        <mv-slider [(value)]="price" [min]="0" [max]="maxPrice" (change)="priceChanged.next(price)"></mv-slider>
+        <div class="row slider-label">
+            <span class="col">0</span>
+            <span class="col text-end">{{maxPrice}}</span>
+        </div>
+    </div>
+    <br>
+    <p class="slider-label m-0">Ratings</p>
+    <div class="rating-conatiner">
+        <rating [(ngModel)]="rating" [max]="5" [readonly]="false" (click)="ratingChange()" style="color: #ffc107; font-size: 28px;"></rating><div class="slider-label ps-1">& Up</div>
+    </div>
+    
+</div>
+

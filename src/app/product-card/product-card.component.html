@@ -1,0 +1,17 @@
+<div class="card">
+    <img src="../../assets/images/item.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title text-nowrap overflow-hidden">{{data.productName}}</h5>
+        <rating [(ngModel)]="data.rating" [max]="5" [readonly]="false" style="color: #ffc107"></rating>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        <div class="row">
+            <h3 class="col-6 m-0"><span class="currency-symbol fs-4">&#8377; </span>{{data.price}}</h3>
+            <div class="col-6">
+                <a href="#" class="btn btn-sm mt-1 btn-primary">Add to Card</a>    
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
