@@ -15,6 +15,7 @@ export class FilterComponent implements OnInit, AfterViewInit {
   @Input() maxPrice = 0;
   @Output() filterChange = new EventEmitter();
   @Output() onClear = new EventEmitter();
+
   price: any = 0;
   priceChanged = new Subject<string>();
   rating:number = 0;
@@ -45,14 +46,6 @@ export class FilterComponent implements OnInit, AfterViewInit {
     setTimeout(()=>{
       this.price = this.maxPrice;
     }, 500);
-
-    // console.log(document.getElementById('sidebar-toggle'));
-    // document.getElementById('sidebar-toggle')?.addEventListener('click', function() {
-    //   console.log("cliked")
-    //   const sidebar = document.getElementById('product-filter');
-    //   console.log("sidebar", sidebar)
-    //   sidebar?.classList.toggle('collapsed');
-    // });
   }
 
   emitFilterChange() {
@@ -73,15 +66,12 @@ export class FilterComponent implements OnInit, AfterViewInit {
     this.emitFilterChange();
   }
 
-  productNameChange() {
-    // console.log("changed product name", this.productName);
-    // this.emitFilterChange();
-  }
-
   onClearClick() {
+    // re-initializing veriables
     this.price = this.maxPrice;
     this.productName = '';
     this.rating = 0;
+    // emit onclear
     this.onClear.emit();
   }
 }

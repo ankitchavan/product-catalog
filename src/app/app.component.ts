@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
   scrollCount:number = 1;
   maxPrice:number = 0;
   isFilterActive = false;
+
   constructor(private appService: AppService) {}
 
   ngOnInit(): void {
@@ -38,8 +39,10 @@ export class AppComponent implements OnInit {
   }
 
   onScroll() {
+    // implemented lazy loading for product list
     const startIndex = this.scrollCount * 20;
     const endIndex = startIndex + 20;
+    // handling filter data
     if(!this.isFilterActive){
       this.displayProductList = [...this.displayProductList, ...this.productList.slice(startIndex, endIndex)];
     } else if(this.isFilterActive) {
@@ -50,13 +53,14 @@ export class AppComponent implements OnInit {
   }
 
   onClearFilter() {
+    // clear filter functionality
     this.isFilterActive = false;
     this.displayProductList = JSON.parse(JSON.stringify(this.productList.slice(0, 20)));
   }
 
   onfilterChange(event:any) {
+    //filter functionality
     this.isFilterActive = true;
-    console.log("filter change", event);
       this.filteredProductList = this.productList.filter((product)=>{
         // filter by product name
         if(event.productName !== '') {
@@ -80,8 +84,6 @@ export class AppComponent implements OnInit {
         }
       });;
       
-      console.log("filtered list", this.filteredProductList);
       this.displayProductList = this.filteredProductList.slice(0,20);
-    
   }
 }
